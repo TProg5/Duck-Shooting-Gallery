@@ -1,11 +1,11 @@
 import pygame
 import sys
 
+from size import screen, WIDTH, HEIGHT
+
 # Инициализация PyGame
 pygame.init()
 
-# Размеры окна и цвета
-WIDTH, HEIGHT = 1000, 500
 BG_COLOR = (0, 0, 0)  # Черный фон
 TEXT_COLOR = (255, 255, 255)  # Белый текст
 
@@ -28,7 +28,7 @@ def draw_splash():
     screen.blit(text_made_with, made_with_rect)
 
     # Логотип PyGame (подставьте правильный путь к файлу)
-    logo = pygame.image.load("pygame_logo.png")
+    logo = pygame.image.load("images/pygame_logo.png")
     logo_rect = logo.get_rect(center=(WIDTH // 2, HEIGHT // 2))
     screen.blit(logo, logo_rect)
 
