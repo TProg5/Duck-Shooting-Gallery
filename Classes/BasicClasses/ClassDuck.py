@@ -15,15 +15,15 @@ class Duck(pygame.sprite.Sprite):
         self.speed = speed
         self.wight = wight
 
-        self.shot_down_duck = load_image("kenney_shooting-gallery\PNG\Objects", "duck_outline_back.png", -1)
+        self.shot_down_duck = load_image("images\PNG\Objects", "duck_outline_back.png", -1)
 
         # Рандомно выбираем утку
         selected_duck = random.choice(self.duck_types)
-        duck_image = load_image("kenney_shooting-gallery/PNG/Objects", selected_duck, -1)
+        duck_image = load_image("images/PNG/Objects", selected_duck, -1)
 
         # Загружаем подставку
         stand_type = random.choice(["stick_woodFixed.png", "stick_metal.png"])
-        stand_image = load_image("kenney_shooting-gallery/PNG/Objects", stand_type)
+        stand_image = load_image("images/PNG/Objects", stand_type)
 
         # Создаём объединённое изображение
         self.image = pygame.Surface(
@@ -39,7 +39,8 @@ class Duck(pygame.sprite.Sprite):
 
                 
         self.rect = self.image.get_rect(topleft=(x, y))
-        self.speed = 3
+
+        self.is_shoot = False
 
     def is_colliding(self, groups):
         """
@@ -50,14 +51,21 @@ class Duck(pygame.sprite.Sprite):
                 if duck != self and self.rect.colliderect(duck.rect): 
                     return True
         return False
-    
+
     def update(self, *args):
         # Движение утки по экрану
         self.rect.x += self.speed
 
-        # Возвращаем утку, если она вышла за пределы экрана
-        if self.rect.right > self.wight + 100:
-            self.rect.x = -self.rect.width
+        if not self.is_shoot:
+            # Движение утки по экрану
+            self.rect.x += self.speed
+            if self.rect.right > self.wight + 100:
+                self.rect.x = -self.rect.width  # Возвращаем только живую утку
+        else:
+            # Если утка сбита, она просто движется за экран
+            self.rect.x += self.speed
+            if self.rect.left > self.wight + 100:
+                self.kill()  # Удаляем сбитую утку, когда она полностью выходит за экран
 
         if (
             args
@@ -65,3 +73,4 @@ class Duck(pygame.sprite.Sprite):
             and self.rect.collidepoint(args[0].pos)
         ):
             self.image = self.shot_image  # Меняем текстуру
+            self.is_shoot = True

@@ -1,8 +1,6 @@
 import pygame
 from functions.images_functions.loadimage import load_image
 
-WIDTH, HEIGHT = 1000, 500
-
 
 class Rifle(pygame.sprite.Sprite):
     def __init__(self, screen, image, position, *groups, flip=False):

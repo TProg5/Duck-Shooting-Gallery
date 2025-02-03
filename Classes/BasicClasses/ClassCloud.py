@@ -20,7 +20,7 @@ class Cloud(pygame.sprite.Sprite):
 
         selected_cloud = random.choice(cloud_types)
         self.image = load_image(
-            "kenney_shooting-gallery\PNG\Stall", selected_cloud, -1
+            "images\PNG\Stall", selected_cloud, -1
         )
 
         scale_factor = random.uniform(

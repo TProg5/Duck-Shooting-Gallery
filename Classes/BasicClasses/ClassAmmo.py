@@ -1,9 +1,11 @@
 import time
 
 import pygame
+
+from size import screen, WIDTH, HEIGHT
+
 from functions.images_functions.loadimage import load_image
 
-WIDTH, HEIGHT = 1000, 500
 
 
 class Ammo(pygame.sprite.Sprite):
@@ -18,9 +20,9 @@ class Ammo(pygame.sprite.Sprite):
         super().__init__(*groups)
 
         # Загружаем изображение прицела
-        self.custom_cursor = load_image("kenney_shooting-gallery\PNG\HUD", "crosshair_white_large.png", -1)
-        self.bullet = load_image("kenney_shooting-gallery\PNG\HUD", "icon_bullet_silver_short.png", -1)
-        self.bullet_empty = load_image("kenney_shooting-gallery\PNG\HUD", "icon_bullet_empty_short.png", -1)
+        self.custom_cursor = load_image("images\PNG\HUD", "crosshair_white_large.png", -1)
+        self.bullet = load_image("images\PNG\HUD", "icon_bullet_silver_short.png", -1)
+        self.bullet_empty = load_image("images\PNG\HUD", "icon_bullet_empty_short.png", -1)
 
         self.screen = screen
 

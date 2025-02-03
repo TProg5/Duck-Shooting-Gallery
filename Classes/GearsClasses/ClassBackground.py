@@ -9,8 +9,7 @@ from Classes.BasicClasses.ClassCloud import Cloud
 from functions.images_functions.loadimage import load_image
 
 
-SIZE = WIDTH, HEIGHT = 1000, 500
-screen = pygame.display.set_mode(SIZE)
+from size import screen, WIDTH, HEIGHT
 
 
 class Background:
@@ -49,22 +48,26 @@ class Background:
 
     @staticmethod
     def load_images() -> dict[str, Any]:
+        stall_path = "images/PNG/Stall"
+        objects_path = "images/PNG/Objects"
+        hud_path = "images/PNG/HUD"
+    
         return {
-            "curtain_image": load_image("kenney_shooting-gallery/PNG/Stall", "curtain.png", -1),
-            "curtain_top_image": load_image("kenney_shooting-gallery/PNG/Stall", "curtain_top.png", -1),
-            "curtain_rope": load_image("kenney_shooting-gallery/PNG/Stall", "curtain_rope.png", -1),
-            "curtain_straight_image": load_image("kenney_shooting-gallery/PNG/Stall", "curtain_straight.png", -1),
-            "bg_red_image": load_image("kenney_shooting-gallery/PNG/Stall", "bg_red.png"),
-            "wood_scene": load_image("kenney_shooting-gallery/PNG/Stall", "bg_wood.png"),
-            "water1_image": load_image("kenney_shooting-gallery/PNG/Stall", "water1.png", -1),
-            "water2_image": load_image("kenney_shooting-gallery/PNG/Stall", "water2.png", -1),
-            "grass1_image": load_image("kenney_shooting-gallery/PNG/Stall", "grass1.png"),
-            "grass2_image": load_image("kenney_shooting-gallery/PNG/Stall", "grass2.png"),
-            "tree_oak_image": load_image("kenney_shooting-gallery/PNG/Stall", "tree_oak.png"),
-            "tree_pine_image": load_image("kenney_shooting-gallery/PNG/Stall", "tree_pine.png"),
-            "monotone_wood_texture": load_image("kenney_shooting-gallery/PNG/Stall", "game_texture.png"),
-            "rifle_image": load_image("kenney_shooting-gallery/PNG/Objects", "rifle.png"),
-            "cursor": load_image("kenney_shooting-gallery/PNG/HUD", "crosshair_white_small.png")
+            "curtain_image": load_image(stall_path, "curtain.png", -1),
+            "curtain_top_image": load_image(stall_path, "curtain_top.png", -1),
+            "curtain_rope": load_image(stall_path, "curtain_rope.png", -1),
+            "curtain_straight_image": load_image(stall_path, "curtain_straight.png", -1),
+            "bg_red_image": load_image(stall_path, "bg_red.png"),
+            "wood_scene": load_image(stall_path, "bg_wood.png"),
+            "water1_image": load_image(stall_path, "water1.png", -1),
+            "water2_image": load_image(stall_path, "water2.png", -1),
+            "grass1_image": load_image(stall_path, "grass1.png"),
+            "grass2_image": load_image(stall_path, "grass2.png"),
+            "tree_oak_image": load_image(stall_path, "tree_oak.png"),
+            "tree_pine_image": load_image(stall_path, "tree_pine.png"),
+            "monotone_wood_texture": load_image(stall_path, "game_texture.png"),
+            "rifle_image": load_image(objects_path, "rifle.png"),
+            "cursor": load_image(hud_path, "crosshair_white_small.png")
         }
 
     def create_decorations(self):
