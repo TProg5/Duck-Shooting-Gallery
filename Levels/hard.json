@@ -1,0 +1,11 @@
+{
+    "difficulty": "hard",
+    "ducks_speed": 2,
+    "count_ducks": 90,
+    "minimum_ducks": 60,
+    "progress": false,
+    "admit": true,
+    "downed_ducks": 0,
+    "max_points": 900,
+    "points_for_ducks": 10
+}
