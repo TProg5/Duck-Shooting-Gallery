@@ -5,9 +5,10 @@
 
 ![image](https://github.com/user-attachments/assets/345980a3-8c0d-49b7-9d9a-247c206fe202)
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/23f953fe-83ff-4551-b8d5-77f72b3af670)
 
-Game textures:
+
+<b>Game textures:</b>
 https://kenney.nl/assets/shooting-gallery
 
 Instructions:
